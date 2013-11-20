@@ -1,0 +1,22 @@
+{
+  "name": "watchnpm",
+  "description": "An app to stay in touch with your favorite packages",
+  "url": "http://github.com/peutetre/watchnpm",
+  "keywords": [
+    "npm",
+    "version"
+  ],
+  "scripts": {
+      "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peutetre/watchnpm"
+  },
+  "author": "Paul Panserrieu",
+  "contributors": [],
+  "engines": {
+    "node": ">= 0.10.20"
+  },
+  "version": "0.0.1"
+}
