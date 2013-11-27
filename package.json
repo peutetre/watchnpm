@@ -7,16 +7,25 @@
     "version"
   ],
   "scripts": {
-      "start": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/peutetre/watchnpm"
   },
   "author": "Paul Panserrieu",
-  "contributors": [],
+  "contributors": [
+    "Rémi Dewitte"
+  ],
   "engines": {
     "node": ">= 0.10.20"
   },
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "dependencies": {
+    "couchwatch": "~0.6.0",
+    "nodemailer": "~0.5.7",
+    "npm-registry-client": "~0.2.30",
+    "sqlite3": "~2.1.19",
+    "express": "~3.4.4"
+  }
 }
