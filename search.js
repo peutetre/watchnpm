@@ -48,7 +48,7 @@ function filter (data, args, notArgs) {
 
 function stripData (data) {
   return { name: data.name
-         , description: npm.config.get("description") ? data.description : ""
+         , description: data.description
          , maintainers: (data.maintainers || []).map(function (m) {
              return "=" + m.name
            })
