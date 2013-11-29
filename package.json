@@ -7,7 +7,12 @@
     "version"
   ],
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build-dev": "./node_modules/browserify/bin/cmd.js ./app/src/main.js -o ./public/main.js --debug",
+    "build-prod": "./node_modules/browserify/bin/cmd.js ./app/src/main.js -o ./public/main.js",
+    "build-css": "cat ./app/styles/style.styl | ./node_modules/stylus/bin/stylus  > ./public/styles/style.css;",
+    "build": "npm run build-css; npm run build-prod",
+    "dev": "npm run build-css; npm run build-dev"
   },
   "repository": {
     "type": "git",
@@ -27,5 +32,13 @@
     "npm-registry-client": "~0.2.30",
     "sqlite3": "~2.1.19",
     "express": "~3.4.4"
+  },
+  "devDependencies": {
+    "browserify": "~2.35.4",
+    "qstart": "0.0.4",
+    "q": "~0.9.7",
+    "zanimo": "0.0.9",
+    "qajax": "~0.1.6",
+    "stylus": "~0.40.3"
   }
 }
