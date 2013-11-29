@@ -29,4 +29,4 @@ exports.init = function() {
     console.log('Couchwatch notifier started');
 }
 
-exports.init();
+// exports.init();
