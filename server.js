@@ -25,40 +25,43 @@ app.get('/api/search', function(req, res) {
     })
 });
 
-app.post('/api/:email/watch', function(req, res) {
-    db.watch(req.param('email'), req.param('package'), req.param('latest'), function(err, results) {
-        // console.log(util.format("WATCH OK (%s,%s,%s)", req.param('email'), req.param('package'), req.param('latest')));
+app.post('/api/:user/watch', function(req, res) {
+    db.watch(req.param('user'), req.param('package'), req.param('latest'), function(err, results) {
+        // console.log(util.format("WATCH OK (%s,%s,%s)", req.param('user'), req.param('package'), req.param('latest')));
         res.send('OK');
     });
 });
 
-app.post('/api/:email/unwatch', function(req, res) {
-    db.unwatch(req.param('email'), req.param('package'), function(err, results) {
-        // console.log(util.format("UNWATCH OK (%s,%s)", req.param('email'), req.param('package')));
+app.post('/api/:user/unwatch', function(req, res) {
+    db.unwatch(req.param('user'), req.param('package'), function(err, results) {
+        // console.log(util.format("UNWATCH OK (%s,%s)", req.param('user'), req.param('package')));
         res.send('OK');
     });
 });
 
-app.get('/api/:email/watches', function(req, res) {
-  db.watches(req.param('email'), function(err, results){
+app.get('/api/:user/watches', function(req, res) {
+  db.watches(req.param('user'), function(err, results){
       res.send(results);
   });
 });
 
-app.get('/api/:email', function(req, res) {
-    db.getUser(req.param('email'), function (err, results){
-        // console.log(util.format('GET USER %s : %s,%s', req.param('email'), err, results)); 
+/* REPLACED by /oauth/credentials
+
+app.get('/api/:user', function(req, res) {
+    db.getUser(req.param('user'), function (err, results){
+        // console.log(util.format('GET USER %s : %s,%s', req.param('user'), err, results)); 
         if(err){ res.send(500, 'ERR: '+err) } else { res.send(results.data) }
     });
 });
 
-app.post('/api/:email', function(req, res) {
+app.post('/api/:user', function(req, res) {
     var u = JSON.stringify(req.body);
-    db.saveUser(req.param('email'), u , function (err, results){
-        // console.log(util.format("USER SAVE %s : %s", req.param('email'), err));
+    db.saveUser(req.param('user'), u , function (err, results){
+        // console.log(util.format("USER SAVE %s : %s", req.param('user'), err));
         if(err){ res.send(500, 'ERR: '+err) } else { res.send('OK') }
     });
 });
+*/
 
 function consumer() {
   return new oauth.OAuth(
