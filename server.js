@@ -6,6 +6,7 @@ var db = require('./db');
 var search = require('./search');
 var express = require('express');
 var oauth = require('oauth');
+var watcher = require('./watcher');
 
 var config = JSON.parse(fs.readFileSync(process.env.WATCHNPM_CONFIG ? process.env.WATCHNPM_CONFIG : "./watchnpm_config.json"));
 db.prepare();
@@ -132,3 +133,5 @@ app.get('/debug/session', function(req, res) {
 
 app.listen(port);
 console.log('SERVER ready on port ' + port);
+watcher.init();
+console.log('Couchwatch notifier started');
