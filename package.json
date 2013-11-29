@@ -31,7 +31,8 @@
     "nodemailer": "~0.5.7",
     "npm-registry-client": "~0.2.30",
     "sqlite3": "~2.1.19",
-    "express": "~3.4.4"
+    "express": "~3.4.4",
+    "oauth": "~0.9.10"
   },
   "devDependencies": {
     "browserify": "~2.35.4",
