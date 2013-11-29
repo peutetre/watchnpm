@@ -36,6 +36,7 @@ section {
 section h2 {
   height: 80px;
   line-height: 80px;
+  font-family: AllerRegular, sans-serif;
 }
 section.results h2,
 section.fav h2 {
@@ -45,6 +46,13 @@ section.fav h2 {
   line-height: 80px;
   background-color: #fff;
   border-bottom: 3px solid #fafaf7;
+}
+section.fav h2 span {
+  font-size: 70px;
+  line-height: 70px;
+  float: left;
+  color: #ffdb74;
+  margin-right: 10px;
 }
 section.search {
   margin: 150px auto 0;
