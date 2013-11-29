@@ -29,6 +29,45 @@ article header {
   width: 100%;
   background: #cb3736;
 }
+article header div.content {
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+article header div.content div.settings {
+  height: 50px;
+  width: 100%;
+  background: #00f;
+}
+article header div.content div.logo {
+  background: url("../images/logo.png") no-repeat;
+  height: 62px;
+  width: 246px;
+  margin: 19px 0 0 20px;
+  display: inline-block;
+}
+article header div.content div.menu {
+  float: right;
+  height: 100px;
+  vertical-align: middle;
+  line-height: 100px;
+  margin-right: 20px;
+}
+article header div.content div.menu a {
+  font-family: AllerRegular;
+  color: #fff;
+  text-decoration: none;
+  font-size: 19px;
+  margin: 0 10px;
+}
+article header div.content div.menu img.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: relative;
+  top: 20px;
+}
 section {
   max-width: 1024px;
   margin: 0 auto;
