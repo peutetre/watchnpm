@@ -115,7 +115,7 @@ app.get('/oauth/callback', function(req, res){
           req.session.twitterData = JSON.parse(data);
           req.session.twitterScreenName = req.session.twitterData.screen_name;
           // console.log(util.format("LOGGED IN %s, redirecting", req.session.twitterScreenName));
-          res.redirect('/debug/session');
+          res.redirect('/app');
           // res.send('You are signed in: ' + req.session.twitterScreenName)
         }
       });  
