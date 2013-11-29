@@ -20,7 +20,8 @@
   },
   "author": "Paul Panserrieu",
   "contributors": [
-    "Rémi Dewitte"
+    "Rémi Dewitte",
+    "Anthony Aubertin"
   ],
   "engines": {
     "node": ">= 0.10.20"

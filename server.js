@@ -13,11 +13,16 @@ db.prepare();
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+// serving landing page
+app.use(express.static(__dirname + '/landing'));
+// serving app
+app.use('/app', express.static(__dirname + '/public'));
 app.use(express.logger());
 app.use(express.cookieParser());
 app.use(express.session({secret: config.sessionSecret}));
 app.use(express.bodyParser());
+
+
 
 app.get('/api/search', function(req, res) {
     var q = req.param('q');
