@@ -26,4 +26,7 @@ exports.init = function() {
          }, 30 * 1000);
     });
 
+    console.log('Couchwatch notifier started');
 }
+
+exports.init();

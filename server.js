@@ -138,5 +138,4 @@ app.get('/debug/session', function(req, res) {
 
 app.listen(port);
 console.log('SERVER ready on port ' + port);
-watcher.init();
-console.log('Couchwatch notifier started');
+// watcher.init();
