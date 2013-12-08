@@ -4,25 +4,28 @@
         <title>watchnpm - Stay in touch with your favorite npm packages</title>
         <meta charset='utf-8' />
         <link rel="icon" href="images/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width">
     </head>
     <body>
         <style type="text/css">
-            html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit;}
-            table {border-collapse: collapse; border-spacing: 0;}
-            caption, th, td {text-align: left; font-weight: normal;}
-            form legend {display: none;}
-            blockquote:before, blockquote:after, q:before, q:after {content: "";}
-            blockquote, q {quotes: "" "";}
-            ol, ul {list-style: none;}
-            hr {display: none; visibility: hidden;}
-            :focus {outline: 0;}
-
+            @font-face {
+              font-family: 'Open Sans';
+              font-style: italic;
+              font-weight: 700;
+              src: local('Open Sans'), url('./fonts/opensans.woff') format('woff');
+            }
             *{
                 -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-weight: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                font-family: inherit;
             }
             body{
                 background:#FAFAF7;
@@ -31,86 +34,88 @@
                 font-size: 14px;
                 font-weight: 400;
                 -webkit-font-smoothing: antialiased;
-                padding:0;
-                margin:0;
             }
-
             html, body{
                 height: 100%;
                 width: 100%;
-                color:#000;
                 background:#CB3736;
             }
-
-            *{
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-            }
-
             .wrapper{
                 max-width: 960px;
                 margin: 0 auto;
                 background:#CB3736;
             }
-
             p{
                 color: #fff;
                 text-align: center;
                 font-size: 30px;
                 margin: 10px 0 20px 0;
+                line-height: 40px;
             }
-
             img {
                 width:246px;
-                margin:0 auto;
-                padding: 50px 0;
+                height:67px;
+                margin: 25px auto;
+                padding: 0;
                 display:block;
             }
-
             .label {
                 font-size:20px;
             }
-
-            input {
-                width: 250px;
-                border: none;
-                height: 40px;
-                line-height: 30px;
-                padding: 0 0 0 5px;
-                font-size: 20px;
-                background: rgb(255, 255, 255);
-                margin: 0;
-                position: relative;
-            }
-
-            button {
-                background: rgb(255, 255, 255);
-                height: 40px;
-                width: 40px;
-                line-height: 40px;
-                display: inline-block;
-                vertical-align: top;
-                margin: 0;
-                padding: 0;
-                position: relative;
-                font-size: 20px;
-                left: -4px;
-                border: none;
-            }
-
             form {
-                text-align:center;
+                padding: 0 0 20px 0;
+            }
+            div.mailinglist {
+                width: 300px;
+                margin: auto;
+                text-align: left;
+                position:relative;
+            }
+            .mailinglist input {
+                width:250px;
+                border:none;
+                height:50px;
+                font-size: 20px;
+                padding: 0 5px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                color:rgb(43, 43, 43);
+            }
+            .mailinglist button {
+                width:50px;
+                height:50px;
+                position:absolute;
+                right:0;
+                border:none;
+                padding: 0 10px 0 10px;
+                font-family: 'Open Sans', sans-serif;
+                font-size:20px;
+                background-color:white;
+                color: rgb(203, 55, 54);
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                -webkit-transition:color 200ms ease-in;
+                -ms-transition:color 200ms ease-in;
+                -moz-transition:color 200ms ease-in;
+                transition:color 200ms ease-in;
+                cursor:pointer;
+            }
+            .mailinglist button:hover {
+               color:black;
             }
         </style>
         <div class="wrapper">
             <img src="images/logo.png" />
             <p>Using npm everyday,<br>Relaying on many packages? <br> Need to keep track of your favorite packages?</p>
             <p>watchnpm will keep you up to date.</p>
-            <p class='label'>Enter you e-mail to be the first!</p>
-            <form>
-                <input placeholder='name@gmail.com'/>
-                <button>GO</button>
+            <p class='label'>Enter you e-mail to be informed first!</p>
+            <form class='old' action='' method='post'>
+                <div class='mailinglist'>
+                    <input placeholder='name@gmail.com' type='email'/>
+                    <button>GO</button>
+                </div>
             </form>
         </div>
     </body>
