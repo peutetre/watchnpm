@@ -1,0 +1,14 @@
+{
+  "name": "watchnpm-prelanding",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.6",
+    "consolidate": "~0.10.0",
+    "save": "0.0.20",
+    "ejs": "~0.8.5"
+  }
+}
