@@ -33,6 +33,7 @@
                 font-family: 'Open Sans', sans-serif;
                 font-size: 14px;
                 font-weight: 400;
+                padding:25px 0 0 0;
                 -webkit-font-smoothing: antialiased;
             }
             html, body{
@@ -55,7 +56,7 @@
             img {
                 width:246px;
                 height:67px;
-                margin: 25px auto;
+                margin: 0 auto;
                 padding: 0;
                 display:block;
             }
@@ -107,13 +108,13 @@
             }
         </style>
         <div class="wrapper">
-            <img src="images/logo.png" />
+            <a href='/'><img src="images/logo.png" /></a>
             <p>Using npm everyday,<br>Relaying on many packages? <br> Need to keep track of your favorite packages?</p>
             <p>watchnpm will keep you up to date.</p>
-            <p class='label'>Enter you e-mail to be informed first!</p>
+            <p class='label'>Enter you e-mail to be first informed!</p>
             <form class='old' action='' method='post'>
                 <div class='mailinglist'>
-                    <input placeholder='name@gmail.com' type='email'/>
+                    <input placeholder='name@email.com' type='email' name='email' autofocus='autofocus' autocomplete='on' required='required'/>
                     <button>GO</button>
                 </div>
             </form>
