@@ -2,7 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 
 module.exports = function(req, res){
     var t = new Date();
-    MongoClient.connect('mongodb://127.0.0.1:27017/landing-test', function(err, db) {
+    MongoClient.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/landing-test', function(err, db) {
         if(err) throw err;
 
         var collection = db.collection('people');
