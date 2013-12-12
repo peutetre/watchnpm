@@ -13,7 +13,7 @@ module.exports = function(req, res){
             d:t,
             ip:req.ip
         };
-
+        console.log(o.email);
         collection.insert(o, function(err) {
             db.close();
             res.render('done.html');
