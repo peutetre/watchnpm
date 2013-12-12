@@ -29,7 +29,7 @@ app.use(function(req, res) {
 
 app.use(function(error, req, res, next) {
   res.status(500);
- res.render('500.html', {title:'500', error: error});
+  res.render('500.html', {title:'500', error: error});
 });
 
 if ('development' == app.get('env')) {
