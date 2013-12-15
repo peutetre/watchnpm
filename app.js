@@ -24,7 +24,7 @@ app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 
 app.use(function(req, res) {
   res.status(400);
-  res.render('404.html', {title: '404'});
+  res.render('400.html', { msg: '404' });
 });
 
 app.use(function(error, req, res, next) {
