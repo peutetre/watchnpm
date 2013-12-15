@@ -23,13 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 
 app.use(function(req, res) {
-  res.status(400);
-  res.render('400.html', { msg: '404' });
+  res.status(400).render('error.html', { title:null, msg: '404' });
 });
 
 app.use(function(error, req, res, next) {
-  res.status(500);
-  res.render('500.html', {title:'500', error: error});
+  res.status(500).render('error.html', { title:'500', msg: error });
 });
 
 if ('development' == app.get('env')) {

@@ -64,6 +64,9 @@
         </style>
         <div class="wrapper">
             <a href='/'><img src="images/logo.png" /></a>
+            <% if(title) { %>
+            <p><%= title %></p>
+            <% } %>
             <p><%= msg %></p>
         </div>
     </body>
