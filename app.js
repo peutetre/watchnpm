@@ -16,6 +16,7 @@ app.set('view engine', 'html');
 
 app.use(express.favicon());
 app.use(express.logger(loggerƒ));
+app.enable('trust proxy');
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
