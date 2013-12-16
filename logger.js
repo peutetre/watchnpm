@@ -1,3 +1,5 @@
+var bytes = require('bytes');
+
 module.exports = function(tokens, req, res){
   var status = res.statusCode
     , len = parseInt(res.getHeader('Content-Length'), 10)
