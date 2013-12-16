@@ -3,6 +3,7 @@ var http = require('http');
 var path = require('path');
 var engines = require('consolidate');
 
+var loggerƒ = require('./logger');
 var onIndex = require('./routes');
 var onAdd = require('./routes/add');
 
@@ -14,7 +15,7 @@ app.engine('html', engines.ejs);
 app.set('view engine', 'html');
 
 app.use(express.favicon());
-app.use(express.logger('dev'));
+app.use(express.logger(loggerƒ));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
