@@ -13,7 +13,7 @@ module.exports = function(tokens, req, res){
     ? ''
     : len = ' - ' + bytes(len);
 
-  return '\x1b[90m' + req.ip + ' - '
+  return '\x1b[90m' + req.ips + ' - '
     + req.method
     + ' ' + req.originalUrl + ' '
     + '\x1b[' + color + 'm' + res.statusCode
