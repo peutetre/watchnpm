@@ -4,7 +4,7 @@ module.exports = function(tokens, req, res){
   var status = res.statusCode
     , len = parseInt(res.getHeader('Content-Length'), 10)
     , color = 32
-    , ip = req.headers['X-Real-IP'] || req.connection.remoteAddress;
+    , ip = ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
 
   if (status >= 500) color = 31
   else if (status >= 400) color = 33
