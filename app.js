@@ -7,7 +7,8 @@ var loggerƒ = require('./logger');
 var onIndex = require('./routes');
 var onAdd = require('./routes/add');
 
-var app = express();
+var app = express(),
+    port =  process.env.PORT || 3000;
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +39,22 @@ if ('development' == app.get('env')) {
 app.get('/', onIndex);
 app.post('/', onAdd);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+function init() {
+    var server = http.createServer(app).listen(port, function(){
+        console.log('Express server listening on port ' + port);
+    });
+
+    server.on('error', function (err) {
+        if(err.code == 'EADDRINUSE') {
+            console.log('port ' + port + ' is already in use...');
+            console.log('trying port' + (port + 1) );
+            port = port + 1;
+            init();
+        }
+        else {
+            console.log(err);
+        }
+    });
+}
+
+init();
